@@ -23,6 +23,30 @@ public class Book {
         this.theISBNNumber = thirteenDigitISBNNumberOfTheBook;
     }
 
+    public String getNameOfTheBook() {
+        return bookName;
+    }
+
+    public void setNameOfTheBook(String nameOfTheBook) {
+        this.bookName = nameOfTheBook;
+    }
+
+    public String getNameOfTheAuthorOfTheBook() {
+        return authorOfBook;
+    }
+
+    public void setNameOfTheAuthorOfTheBook(String nameOfTheAuthorOfTheBook) {
+        this.authorOfBook = nameOfTheAuthorOfTheBook;
+    }
+
+    public String getThirteenDigitISBNNumberOfTheBook() {
+        return theISBNNumber;
+    }
+
+    public void setThirteenDigitISBNNumberOfTheBook(String thirteenDigitISBNNumberOfTheBook) {
+        this.theISBNNumber = thirteenDigitISBNNumberOfTheBook;
+    }
+
 
 }
 
