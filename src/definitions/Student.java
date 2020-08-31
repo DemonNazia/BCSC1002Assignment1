@@ -30,6 +30,17 @@ public class Student {
     public void setNameOfTheBookIssueByTheStudent(Book[] nameOfTheBookIssueByStudent) {
         this.nameOfTheBookIssueByStudent = nameOfTheBookIssueByStudent;
     }
+    public void nameOfTheStudent(String firstName, String middleName, String lastName) {
+        System.out.println("Name of the student " + firstName + " " + middleName + " " + lastName);
+    }
+
+    public void universityRollNumber(long number) {
+        System.out.println("University Roll NUmber: " + number);
+    }
+
+    public void numberOfBooksIssuedByStudent(int number) {
+        System.out.println("Number Of Books Issued By Student" + number);
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -49,6 +60,12 @@ public class Student {
         return "Student{" +
                 "nameOfTheBookIssueByStudent=" + Arrays.toString(nameOfTheBookIssueByStudent) +
                 '}';
+    }
+
+    public void booksAvailable() {
+        for (Book books : nameOfTheBookIssueByStudent) {
+            System.out.println(books);
+        }
     }
 }
 

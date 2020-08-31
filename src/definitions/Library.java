@@ -14,9 +14,9 @@ public class Library {
     public Book[] currentlyAvailableBooks;
 
     public Library() {
-        this.currentlyAvailableBooks = new Book[MAX_BOOKS_IN_LIBRARY];
-        for (int libraryIndex = 0; libraryIndex < MAX_BOOKS_IN_LIBRARY; libraryIndex++) {
-            this.currentlyAvailableBooks[libraryIndex] = new Book();
+        this.currentlyAvailableBooks = new Book[10];
+        for (int i = 0; i < currentlyAvailableBooks.length; i++) {
+            currentlyAvailableBooks[i] = new Book("Book Number: " + (i + 1));
         }
     }
 
