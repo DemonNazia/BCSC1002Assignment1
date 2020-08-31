@@ -11,7 +11,6 @@ public class Library {
     public static final int MAX_BOOKS_IN_LIBRARY = 10;
     public Book[] currentlyAvailableBooks;
 
-
     public Library() {
         this.currentlyAvailableBooks = new Book[MAX_BOOKS_IN_LIBRARY];
         for (int libraryIndex = 0; libraryIndex < MAX_BOOKS_IN_LIBRARY; libraryIndex++) {
@@ -19,8 +18,15 @@ public class Library {
         }
     }
 
-
     public Library(Book[] currentlyAvailableBooks) {
+        this.currentlyAvailableBooks = currentlyAvailableBooks;
+    }
+
+    public Book[] getCurrentlyAvailableBooks() {
+        return currentlyAvailableBooks;
+    }
+
+    public void setCurrentlyAvailableBooks(Book[] currentlyAvailableBooks) {
         this.currentlyAvailableBooks = currentlyAvailableBooks;
     }
 }
