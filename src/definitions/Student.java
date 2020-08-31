@@ -14,4 +14,24 @@ public class Student {
     private int numberOfBooksIssued;
     private Book[] namesOfTheBooksIssued;
 
+    public Student() {
+        this.studentName = "null";
+        this.studentUniversityRollNumber = 0L;
+        this.numberOfBooksIssued = 0;
+        this.namesOfTheBooksIssued = new Book[MAX_BOOK_ISSUED];
+        for (int i = 0; i < MAX_BOOK_ISSUED; i++) {
+            this.namesOfTheBooksIssued[i] = new Book();
+        }
+    }
+
+    public Student(String studentName,
+                   long studentUniversityRollNumber,
+                   int numberOfBooksIssued,
+                   Book[] namesOfTheBooksIssued){
+        this.studentName = studentName;
+        this.studentUniversityRollNumber = studentUniversityRollNumber;
+        this.numberOfBooksIssued = numberOfBooksIssued;
+        this.namesOfTheBooksIssued = namesOfTheBooksIssued;
+    }
+
 }
