@@ -7,4 +7,11 @@
 package definitions;
 
 public class Student {
+
+    public static final int MAX_BOOK_ISSUED = 5;
+    private String studentName;
+    private long studentUniversityRollNumber;
+    private int numberOfBooksIssued;
+    private Book[] namesOfTheBooksIssued;
+
 }
