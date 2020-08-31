@@ -6,6 +6,8 @@
  * */
 package definitions;
 
+import java.util.Arrays;
+
 public class Library {
 
     public static final int MAX_BOOKS_IN_LIBRARY = 10;
@@ -23,10 +25,31 @@ public class Library {
     }
 
     public Book[] getCurrentlyAvailableBooks() {
-        return currentlyAvailableBooks;
+        return currentlyAvailableBooks.clone();
     }
 
     public void setCurrentlyAvailableBooks(Book[] currentlyAvailableBooks) {
         this.currentlyAvailableBooks = currentlyAvailableBooks;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Library library = (Library) o;
+        return Arrays.equals(currentlyAvailableBooks, library.currentlyAvailableBooks);
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(currentlyAvailableBooks);
+    }
+
+
+    @Override
+    public String toString() {
+        return "Library{" +
+                "currentlyAvailableBooks=" + Arrays.toString(currentlyAvailableBooks) +
+                '}';
     }
 }
