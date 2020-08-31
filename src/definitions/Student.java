@@ -6,32 +6,54 @@
  * */
 package definitions;
 
+import java.util.Arrays;
+
 public class Student {
 
-    public static final int MAX_BOOK_ISSUED = 5;
-    private String studentName;
-    private long studentUniversityRollNumber;
-    private int numberOfBooksIssued;
-    private Book[] namesOfTheBooksIssued;
+    Book[] nameOfTheBookIssueByStudent;
 
     public Student() {
-        this.studentName = "null";
-        this.studentUniversityRollNumber = 0L;
-        this.numberOfBooksIssued = 0;
-        this.namesOfTheBooksIssued = new Book[MAX_BOOK_ISSUED];
-        for (int i = 0; i < MAX_BOOK_ISSUED; i++) {
-            this.namesOfTheBooksIssued[i] = new Book();
+        this.nameOfTheBookIssueByStudent = new Book[5];
+        for (int i = 0; i < nameOfTheBookIssueByStudent.length; i++) {
+            nameOfTheBookIssueByStudent[i] = new Book("Book Number: " + (i + 1));
         }
     }
 
-    public Student(String studentName,
-                   long studentUniversityRollNumber,
-                   int numberOfBooksIssued,
-                   Book[] namesOfTheBooksIssued){
-        this.studentName = studentName;
-        this.studentUniversityRollNumber = studentUniversityRollNumber;
-        this.numberOfBooksIssued = numberOfBooksIssued;
-        this.namesOfTheBooksIssued = namesOfTheBooksIssued;
+    public Student(Book[] nameOfTheBookIssueByStudent) {
+        this.nameOfTheBookIssueByStudent = nameOfTheBookIssueByStudent;
     }
 
+    public Book[] getNameOfTheBookIssueByStudent() {
+        return nameOfTheBookIssueByStudent.clone();
+    }
+
+    public void setNameOfTheBookIssueByTheStudent(Book[] nameOfTheBookIssueByStudent) {
+        this.nameOfTheBookIssueByStudent = nameOfTheBookIssueByStudent;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return Arrays.equals(nameOfTheBookIssueByStudent, student.nameOfTheBookIssueByStudent);
+    }
+
+    @Override
+    public int hashCode() {
+        return Arrays.hashCode(nameOfTheBookIssueByStudent);
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "nameOfTheBookIssueByStudent=" + Arrays.toString(nameOfTheBookIssueByStudent) +
+                '}';
+    }
 }
+
+
+
+
+
+
